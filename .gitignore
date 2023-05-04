@@ -107,5 +107,3 @@ dist
 .env
 
 ios
-.vscode
-.bundle

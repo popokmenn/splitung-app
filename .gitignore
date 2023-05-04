@@ -106,4 +106,4 @@ package-lock.json
 dist
 .env
 
-ios
+ios/Pods

@@ -16,7 +16,9 @@ import {ProfileNavigator} from './ProfileNavigator';
 import {NewsNavigator} from './NewsNavigator';
 import {MediaNavigator} from './MediaNavigator';
 import {StaticsNavigator} from './StaticsNavigator';
-import {SplitungNavigator} from './SplitungNavigator';
+
+import {DashboardNavigator} from './DashboardNavigator';
+import {CostNavigator} from './CostNavigator';
 
 enableScreens();
 
@@ -37,8 +39,10 @@ const AppContainer = () => {
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="Dashboard" component={DashboardNavigator} />
+          <Stack.Screen name="Cost" component={CostNavigator} />
+
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="Splitung" component={SplitungNavigator} />
           <Stack.Screen name="Walkthroughs" component={WalkthroughsNavigator} />
           <Stack.Screen name="Auth" component={AuthNavigator} />
           <Stack.Screen name="Menu" component={MenuNavigator} />

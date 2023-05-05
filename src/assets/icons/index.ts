@@ -100,6 +100,9 @@ export interface IconName {
   plus: ImageRequireSource;
   add: ImageRequireSource;
   breakfast: ImageRequireSource;
+  cart: ImageRequireSource;
+  calendar: ImageRequireSource;
+  scan: ImageRequireSource;
 }
 export const Icons: IconName = {
   back: require('./ic_back.png'),
@@ -158,7 +161,7 @@ export const Icons: IconName = {
   wishlist: require('./ic_wishlist.png'),
   order: require('./ic_order.png'),
   'credit-card': require('./ic_credit_card.png'),
-  searchBottom:require('./ic_search_bottom.png'),
+  searchBottom: require('./ic_search_bottom.png'),
   filter: require('./ic_filter.png'),
   heart: require('./ic_heart.png'),
   profile: require('./ic_profile.png'),
@@ -178,7 +181,7 @@ export const Icons: IconName = {
   'cup-of-tea': require('./ic_cup_of_tea.png'),
   car: require('./ic_car.png'),
   health: require('./ic_health.png'),
-  travel:require('./ic_travel.png'),
+  travel: require('./ic_travel.png'),
   food: require('./ic_food.png'),
   drink: require('./ic_drink.png'),
   ladder: require('./ic_ladder.png'),
@@ -201,4 +204,7 @@ export const Icons: IconName = {
   'play-music': require('./ic_play_music.png'),
   'setting-outline': require('./ic_setting_outline.png'),
   'my-location': require('./ic_my_location.png'),
+  cart: require('./cart.png'),
+  calendar: require('./calendar.png'),
+  scan: require('./scan.png'),
 };

@@ -11,7 +11,7 @@ module.exports = {
         'no-shadow': 'off',
         'no-undef': 'off',
         'react-native/no-inline-styles': 0,
-        'object-curly-spacing': ["error", "never"],
+        'object-curly-spacing': ['error', 'never'],
         'prettier/prettier': [
           'error',
           {

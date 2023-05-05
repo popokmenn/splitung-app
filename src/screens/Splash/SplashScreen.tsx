@@ -13,9 +13,15 @@ const SplashScreen = React.memo(() => {
 
   const DATA = [
     {
-      title: 'Splitung',
+      title: 'Dashboard',
       onPress: () => {
-        navigate('Splitung');
+        navigate('Dashboard');
+      },
+    },
+    {
+      title: 'Cost',
+      onPress: () => {
+        navigate('Cost');
       },
     },
     {

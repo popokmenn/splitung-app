@@ -56,7 +56,6 @@ const ProgressBar = ({
       return prev;
     });
   }, []);
-
   return (
     <View style={{minWidth: 100}}>
       <Layout

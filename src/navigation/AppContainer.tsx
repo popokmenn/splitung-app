@@ -41,7 +41,6 @@ const AppContainer = () => {
           }}>
           <Stack.Screen name="Dashboard" component={DashboardNavigator} />
           <Stack.Screen name="Cost" component={CostNavigator} />
-
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="Walkthroughs" component={WalkthroughsNavigator} />
           <Stack.Screen name="Auth" component={AuthNavigator} />

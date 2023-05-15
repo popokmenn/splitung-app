@@ -3,19 +3,19 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {RootStackParamList} from './types';
 
 import Cost from 'screens/Cost/cost.component';
-import Scan from 'screens/Cost/scan.component';
+import AddPerson from 'screens/Cost/Form/add-person.component';
 
 const NewsStack = createStackNavigator<RootStackParamList>();
 
 export function CostNavigator() {
   return (
     <NewsStack.Navigator
-      initialRouteName="Cost"
+      initialRouteName="AddCost"
       screenOptions={{
         headerShown: false,
       }}>
-      <NewsStack.Screen name="Cost" component={Cost} />
-      <NewsStack.Screen name="Scan" component={Scan} />
+      <NewsStack.Screen name="AddCost" component={Cost} />
+      <NewsStack.Screen name="AddPerson" component={AddPerson} />
     </NewsStack.Navigator>
   );
 }

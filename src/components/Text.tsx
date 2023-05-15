@@ -91,7 +91,7 @@ export default React.forwardRef(
       underline,
       lineHeight,
       line_through,
-      bold,
+      // bold,
       italic,
       category = 't5',
       status,

@@ -9,11 +9,11 @@ const NewsStack = createStackNavigator<RootStackParamList>();
 export function DashboardNavigator() {
   return (
     <NewsStack.Navigator
-      initialRouteName="Dashboard"
+      initialRouteName="DashboardSummary"
       screenOptions={{
         headerShown: false,
       }}>
-      <NewsStack.Screen name="Dashboard" component={Dashboard} />
+      <NewsStack.Screen name="DashboardSummary" component={Dashboard} />
     </NewsStack.Navigator>
   );
 }

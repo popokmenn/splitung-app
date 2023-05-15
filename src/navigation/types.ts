@@ -8,8 +8,11 @@ export type RootStackParamList = {
   Media: undefined,
   Statics: undefined,
   Dashboard: undefined,
+  DashboardSummary: undefined,
   Cost: undefined,
   Scan: undefined,
+  AddPerson: undefined,
+  AddCost: undefined,
 };
 export type WalkthroughsStackParamList = {
   WalkthroughsIntro: undefined,

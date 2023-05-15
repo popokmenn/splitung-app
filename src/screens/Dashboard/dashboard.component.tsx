@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ScrollView, View} from 'react-native';
+import {View} from 'react-native';
 import {useLayout} from 'hooks';
 import {
   Layout,
@@ -23,12 +23,12 @@ const Dashboard = React.memo(() => {
 
   return (
     <Container style={styles.container} useSafeArea={false}>
-      <Layout style={[styles.header, {paddingTop: top + 8}]} level="9" />
+      <Layout style={[styles.header, {paddingTop: top + 8}]} level="1" />
       <Content level="2">
         <Text
-          style={{textAlign: 'left', fontWeight: 'bold'}}
+          style={{textAlign: 'left', fontWeight: 'bold', color: Color.black}}
           category="t5-b"
-          status="black"
+          status="white"
           marginLeft={30}
           marginTop={20}
           marginBottom={-20}>
@@ -39,33 +39,40 @@ const Dashboard = React.memo(() => {
             ...styles.content,
             alignItems: 'center',
             justifyContent: 'center',
+            paddingHorizontal: 24,
+            width: '100%',
           }}>
           <Layout
             level="1"
             style={[
               styles.progressCard,
               {
-                width: 330,
+                width: '100%',
                 height: heightCard,
                 backgroundColor: Color.primary,
                 marginBottom: 10,
               },
             ]}>
-            <Text style={{fontWeight: 'bold'}} category="t4" status="black">
+            <Text
+              style={{fontWeight: 'bold', color: Color.black}}
+              category="t4"
+              status="white">
               My Debts
             </Text>
             <Text
-              style={{fontWeight: 'bold', fontSize: 39, marginTop: 40}}
+              style={{
+                fontWeight: 'bold',
+                fontSize: 39,
+                marginTop: 40,
+                color: Color.black,
+              }}
               category="t1-sb"
-              status="black">
+              status="white">
               Rp. 10.000,00
             </Text>
           </Layout>
         </Content>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.contentCard}>
+        <HStack style={{paddingHorizontal: 24}}>
           {DATA.map((item, i) => (
             <Layout
               key={i}
@@ -73,28 +80,31 @@ const Dashboard = React.memo(() => {
               style={[
                 styles.progressCard,
                 {
-                  width: 160,
+                  width: '48%',
                   height: heightCard,
-                  marginRight: 10,
+                  // marginRight: 10,
                   backgroundColor: item.color,
                 },
               ]}>
               <Text
-                style={{fontWeight: 'bold'}}
+                style={{fontWeight: 'bold', color: Color.black}}
                 category="s2-sb"
-                status="black">
+                status="white">
                 {item.label}
               </Text>
-              <Text style={{fontWeight: 'bold'}} category="t4" status="black">
+              <Text
+                style={{fontWeight: 'bold', color: Color.black}}
+                category="t4"
+                status="white">
                 {item.value}
               </Text>
             </Layout>
           ))}
-        </ScrollView>
+        </HStack>
         <Text
-          style={{textAlign: 'left', fontWeight: 'bold'}}
+          style={{textAlign: 'left', fontWeight: 'bold', color: Color.black}}
           category="t5-b"
-          status="black"
+          status="white"
           marginLeft={30}
           marginTop={20}
           marginBottom={10}>
@@ -118,7 +128,9 @@ const Dashboard = React.memo(() => {
                 backgroundColor: Color.primary,
               }}
             />
-            <Text category="s2-sb" style={{fontWeight: '500', marginLeft: 5}}>
+            <Text
+              category="s2-sb"
+              style={{fontWeight: '500', marginLeft: 5, color: Color.black}}>
               Paid
             </Text>
 
@@ -132,7 +144,9 @@ const Dashboard = React.memo(() => {
                 backgroundColor: Color.danger,
               }}
             />
-            <Text category="s2-sb" style={{fontWeight: '500', marginLeft: 5}}>
+            <Text
+              category="s2-sb"
+              style={{fontWeight: '500', marginLeft: 5, color: Color.black}}>
               Unpaid
             </Text>
           </HStack>
@@ -140,13 +154,17 @@ const Dashboard = React.memo(() => {
         <View style={styles.historyItem}>
           <HStack
             style={{justifyContent: 'space-between', alignItems: 'center'}}>
-            <Text category="s2-sb" style={{fontWeight: 'bold', marginLeft: 20}}>
+            <Text
+              category="s2-sb"
+              style={{fontWeight: 'bold', marginLeft: 20, color: Color.black}}>
               Lunch <Text category="s2-sb">at</Text> Solaria
             </Text>
-            <Text category="s2-sb" style={{marginLeft: 10}}>
+            <Text category="s2-sb" style={{marginLeft: 10, color: Color.black}}>
               2023-03-01
             </Text>
-            <Text category="s2-sb" style={{fontWeight: 'bold', marginLeft: 10}}>
+            <Text
+              category="s2-sb"
+              style={{fontWeight: 'bold', marginLeft: 10, color: Color.black}}>
               Pay to <Text category="s2-sb">Abel</Text>
             </Text>
             <View
@@ -163,14 +181,27 @@ const Dashboard = React.memo(() => {
         <View style={styles.historyItem}>
           <HStack
             style={{justifyContent: 'space-between', alignItems: 'center'}}>
-            <Text category="s2-sb" style={{fontWeight: 'bold', marginLeft: 20}}>
-              Lunch <Text category="s2-sb">at</Text> Solaria
+            <Text
+              category="s2-sb"
+              status="white"
+              style={{fontWeight: 'bold', marginLeft: 20, color: Color.black}}>
+              Lunch{' '}
+              <Text category="s2-sb" status="white">
+                at
+              </Text>{' '}
+              Solaria
             </Text>
             <Text category="s2-sb" style={{marginLeft: 10}}>
               2023-03-01
             </Text>
-            <Text category="s2-sb" style={{fontWeight: 'bold', marginLeft: 10}}>
-              Pay to <Text category="s2-sb">Abel</Text>
+            <Text
+              category="s2-sb"
+              status="white"
+              style={{fontWeight: 'bold', marginLeft: 10, color: Color.black}}>
+              Pay to{' '}
+              <Text category="s2-sb" status="white">
+                Abel
+              </Text>
             </Text>
             <View
               style={{
@@ -288,7 +319,7 @@ const DATA = [
     label: 'My Receivables',
     value: '$10,246',
     progress: 30 / 100,
-    layout: Color.tertiary,
+    layout: '12',
     color: Color.tertiary,
   },
   {

@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "iphone": "npx react-native run-ios --device \"Naufal Retyan’s iPhone\"",
+    "samsung": "react-native run-android --deviceId=RR8R402C17Y"
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -23,6 +25,8 @@
     "@types/lodash": "^4.14.186",
     "@ui-kitten/components": "^5.1.2",
     "@ui-kitten/eva-icons": "^5.1.2",
+    "axios": "^1.4.0",
+    "base-64": "^1.0.0",
     "dayjs": "^1.11.5",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
@@ -31,6 +35,7 @@
     "react-native-calendars": "^1.1289.0",
     "react-native-chart-kit": "^6.12.0",
     "react-native-gesture-handler": "^2.7.0",
+    "react-native-image-picker": "^5.3.1",
     "react-native-modal-datetime-picker": "^14.0.0",
     "react-native-reanimated": "^3.0.0-rc.3",
     "react-native-reanimated-carousel": "^3.0.6",
@@ -50,6 +55,7 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@tsconfig/react-native": "^2.0.2",
+    "@types/base-64": "^1.0.0",
     "@types/jest": "^26.0.23",
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.4",

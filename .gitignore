@@ -107,3 +107,5 @@ dist
 .env
 
 ios/Pods
+android/app
+android/.gradle

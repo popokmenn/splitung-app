@@ -1,12 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar} from 'react-native';
 import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {default as darkTheme} from './src/constants/theme/dark.json';
 import {default as lightTheme} from './src/constants/theme/light.json';
 import {default as customTheme} from './src/constants/theme/appTheme.json';
-import {default as customMapping} from './src/constants/theme/mapping.json'
+import {default as customMapping} from './src/constants/theme/mapping.json';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import ThemeContext from './ThemeContext';
@@ -16,7 +16,9 @@ import AssetsIconsPack from 'assets/AssetsIconsPack';
 import {LogBox} from 'react-native';
 
 LogBox.ignoreAllLogs(true);
-LogBox.ignoreLogs(['Sending `onReanimatedPropsChange` with no listeners registered.']);
+LogBox.ignoreLogs([
+  'Sending `onReanimatedPropsChange` with no listeners registered.',
+]);
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
 ]);
@@ -26,7 +28,9 @@ export default function App() {
 
   React.useEffect(() => {
     AsyncStorage.getItem('theme').then(value => {
-      if (value === 'light' || value === 'dark') setTheme(value);
+      if (value === 'light' || value === 'dark') {
+        setTheme(value);
+      }
     });
   }, []);
 
@@ -36,7 +40,7 @@ export default function App() {
       setTheme(nextTheme);
     });
   };
-  
+
   return (
     <SafeAreaProvider>
       <ThemeContext.Provider value={{theme, toggleTheme}}>
@@ -60,12 +64,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

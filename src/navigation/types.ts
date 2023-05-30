@@ -13,6 +13,8 @@ export type RootStackParamList = {
   Scan: undefined,
   AddPerson: undefined,
   AddCost: undefined,
+  SignIn: undefined,
+  CreateAccount: undefined,
 };
 export type WalkthroughsStackParamList = {
   WalkthroughsIntro: undefined,

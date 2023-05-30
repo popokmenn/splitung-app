@@ -2,8 +2,8 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {RootStackParamList} from './types';
 
-import Cost from 'screens/Cost/cost.component';
-import AddPerson from 'screens/Cost/Form/add-person.component';
+import Cost from 'screens/Cost/components/cost.container.component';
+import AddPerson from 'screens/Cost/form/add-person.component';
 
 const NewsStack = createStackNavigator<RootStackParamList>();
 

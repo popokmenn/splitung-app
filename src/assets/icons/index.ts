@@ -103,6 +103,11 @@ export interface IconName {
   cart: ImageRequireSource;
   calendar: ImageRequireSource;
   scan: ImageRequireSource;
+  splitung: ImageRequireSource;
+  maps: ImageRequireSource;
+  desc: ImageRequireSource;
+  camera: ImageRequireSource;
+  trash: ImageRequireSource;
 }
 export const Icons: IconName = {
   back: require('./ic_back.png'),
@@ -207,4 +212,9 @@ export const Icons: IconName = {
   cart: require('./cart.png'),
   calendar: require('./calendar.png'),
   scan: require('./scan.png'),
+  splitung: require('./ic_splitung.png'),
+  maps: require('./location.png'),
+  desc: require('./desc.png'),
+  camera: require('./camera.png'),
+  trash: require('./trash.png'),
 };

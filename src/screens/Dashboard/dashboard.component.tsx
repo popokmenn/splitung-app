@@ -23,7 +23,7 @@ const Dashboard = React.memo(() => {
 
   return (
     <Container style={styles.container} useSafeArea={false}>
-      <Layout style={[styles.header, {paddingTop: top + 8}]} level="1" />
+      <Layout style={[styles.header, {paddingTop: top + 8}]} level="2" />
       <Content level="2">
         <Text
           style={{textAlign: 'left', fontWeight: 'bold', color: Color.black}}
@@ -257,7 +257,7 @@ const themedStyles = StyleService.create({
     paddingBottom: 24,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
-    backgroundColor: Color.white,
+    // backgroundColor: Color.white,
     color: Color.black,
   },
   avatar: {

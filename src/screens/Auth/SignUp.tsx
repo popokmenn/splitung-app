@@ -7,49 +7,82 @@ import {
   Input,
   Icon,
   Button,
-  Divider,
 } from '@ui-kitten/components';
 
 import {Container, Content, HStack, Text, VStack} from 'components';
-import {Images} from 'assets/images';
 import {Icons} from 'assets/icons';
+import {navigate} from 'navigation/RootNavigation';
+import {_register} from './service/auth';
 
-const SignIn02 = React.memo(() => {
-  const {goBack} = useNavigation();
+const SignUp = React.memo(() => {
   const styles = useStyleSheet(themedStyles);
-
   const [secureTextEntry, setSecureTextEntry] = React.useState(true);
+  const [registerData, setRegisterData] = React.useState({
+    username: '',
+    password: '',
+    email: '',
+    phone: '',
+  });
+
+  const reg = async () => {
+    const res = await _register(registerData);
+    if (!res.isError) {
+      setRegisterData({
+        username: '',
+        password: '',
+        email: '',
+        phone: '',
+      });
+    }
+  };
 
   return (
     <Container>
       <Content>
-        <HStack ml={40}>
+        <HStack ml={40} mt={150}>
           <VStack>
             <Image
-              source={Icons.logo}
+              source={Icons.splitung}
               //@ts-ignore
               style={styles.logo}
             />
-            <Text category="t1-sb" marginTop={32}>
-              Welcome
+            <Text category="t2-sb">Register</Text>
+            <Text category="t3" marginBottom={24}>
+              to Splitung
             </Text>
           </VStack>
-          <Image
-            source={Images.auth['sign-in-02']}
-            //@ts-ignore
-            style={styles.background}
-          />
         </HStack>
         <VStack mh={40}>
-          <Text category="t3" marginBottom={24}>
-            to Claka
-          </Text>
-          <Input placeholder="Username" status="primary" style={styles.input} />
+          <Input
+            onChangeText={i => setRegisterData({...registerData, email: i})}
+            placeholder="Email"
+            status="primary"
+            keyboardType="email-address"
+            style={styles.input}
+            value={registerData.email}
+          />
+          <Input
+            onChangeText={i => setRegisterData({...registerData, phone: i})}
+            placeholder="Phone"
+            status="primary"
+            keyboardType="phone-pad"
+            style={styles.input}
+            value={registerData.phone}
+          />
+          <Input
+            onChangeText={i => setRegisterData({...registerData, username: i})}
+            placeholder="Username"
+            status="primary"
+            style={styles.input}
+            value={registerData.username}
+          />
           <Input
             placeholder="Password"
             status="primary"
             style={styles.input}
+            onChangeText={i => setRegisterData({...registerData, password: i})}
             secureTextEntry={secureTextEntry}
+            value={registerData.password}
             accessoryRight={
               <TouchableOpacity
                 onPress={() => setSecureTextEntry(!secureTextEntry)}>
@@ -64,47 +97,25 @@ const SignIn02 = React.memo(() => {
         </VStack>
         <HStack mt={8}>
           <Button
-            children={'SIGN IN'}
+            children={'SIGN UP'}
             style={styles.buttonSignIn}
             status="primary"
-            onPress={goBack}
+            onPress={() => {
+              reg();
+            }}
           />
-          <TouchableOpacity style={styles.buttonFaceid}>
-            <Icon pack="assets" name="face-id" style={styles.iconFaceid} />
-          </TouchableOpacity>
         </HStack>
-        <Text
-          category="s1-sb"
-          onPress={goBack}
-          center
-          status="info"
-          marginVertical={24}>
-          Forgot password?
-        </Text>
-        <HStack itemsCenter mh={40} mb={24}>
-          <Divider style={styles.divider} />
-          <Text>or</Text>
-          <Divider style={styles.divider} />
-        </HStack>
-        <Button
-          children={'SIGN IN WITH FACEBOOK'}
-          status="secondary"
-          style={styles.buttonSubmit}
-        />
-        <Button
-          children={'SIGN IN WITH GOOGLE'}
-          status="danger"
-          style={styles.buttonSubmit}
-        />
       </Content>
-      <Text category="s1-sb" status="info" center>
-        Don’t Have Account? Sign UP
-      </Text>
+      <TouchableOpacity onPress={() => navigate('SignIn')}>
+        <Text category="s1-sb" status="info" center>
+          Already Have Account? Sign In
+        </Text>
+      </TouchableOpacity>
     </Container>
   );
 });
 
-export default SignIn02;
+export default SignUp;
 
 const themedStyles = StyleService.create({
   container: {
@@ -114,9 +125,9 @@ const themedStyles = StyleService.create({
     alignSelf: 'flex-end',
   },
   logo: {
-    width: 48,
+    width: 68,
     height: 48,
-    marginTop: 48,
+    objectFit: 'cover',
   },
   input: {
     flex: 1,
